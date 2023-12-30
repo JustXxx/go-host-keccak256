@@ -1,0 +1,16 @@
+# build the image:
+```
+sh ./run.sh
+```
+
+# checkout zkWasm with host
+```
+git clone -b host-ops-1.6 https://github.com/ethstorage/zkWasm.git
+cd zkWasm
+git submodule update --init
+```
+
+# run the cli (in zkWasm folder)
+```
+cargo run -- --function zkmain --output ./output --param ./param --host host --wasm ../go-host-keccak256/keccak256.wasm dry-run
+```
